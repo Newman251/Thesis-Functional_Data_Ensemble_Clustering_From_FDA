@@ -17,7 +17,7 @@ print(length(values))
 basis <- create.bspline.basis(rangeval = c(min(argvals), max(argvals)), nbasis = 25, norder = 3) # nolint
 data_fd <- smooth.basis(argvals = argvals, y = values, fdParobj = basis)$fd
 print(data_fd)
-res_clust = funFEM(data_fd,K=2) # nolint # nolint: commas_linter.
+res_clust = funFEM(data_fd,K=4) # nolint # nolint: commas_linter.
 pred_labels <- res_clust$P
 
 print(pred_labels)

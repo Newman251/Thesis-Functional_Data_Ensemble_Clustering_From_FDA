@@ -19,7 +19,7 @@ print(length(values))
 basis <- create.bspline.basis(rangeval = c(min(argvals), max(argvals)), nbasis = 25, norder = 3) # nolint
 data_fd <- smooth.basis(argvals = argvals, y = values, fdParobj = basis)$fd
 print(data_fd)
-res_clust <- funHDDC(data_fd, K = 2, threshold = 0.3, model = 'ABQkDk',
+res_clust <- funHDDC(data_fd, K = 5, threshold = 0.3, model = 'ABQkDk',
 itermax = 2000, eps = 1e-3, init = 'kmeans') # nolint
 pred_labels <- res_clust$class
 
