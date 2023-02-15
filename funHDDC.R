@@ -7,7 +7,7 @@ library(mclust)
 library(tidyverse)
 
 # Load data
-argvals <- seq(0, 1, length.out = 150)
+argvals <- seq(0, 1, length.out = 140)
 values <- t(as.matrix(read.csv('~/ProjectDocs/Project_code/simuations/Data/DataStore.csv', header = FALSE))) # nolint
 labels <- unname(as_vector(read.csv('~/ProjectDocs/Project_code/simuations/Data/LabelStore.csv', header = FALSE))) # nolint
 
