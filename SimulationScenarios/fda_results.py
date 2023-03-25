@@ -24,7 +24,7 @@ def percentage_variation_ami_ari(eigen_dimension, data, spline_length, simulatio
     for i in range(eigen_dimension):
         variance_explained[i] = np.var(principal_components[:, i])/total_variance
 
-    print('Percentage of variation explained by each eigen dimensions: ', variance_explained)
+    # print('Percentage of variation explained by each eigen dimensions: ', variance_explained)
 
     # Determine the ari and ami scores for each eigen dimension
     for i in (v_range):
@@ -63,16 +63,16 @@ def plot_percentage_variation_ami_ari(variance_explained, ari, ami, v_range, sim
     axs[0, 1].plot(v_range, np.cumsum(variance_explained)*100, linestyle='-', marker='o', color='b')
     axs[0, 1].set_title('Total Variation % '+'Explained per Eigen Dimension')
     axs[0, 1].set_xlabel('Dimension')
-    axs[0, 1].set_ylabel('Percentage Explained')
+    axs[0, 1].set_ylabel('Variance Explained')
     
     axs[1, 0].plot(v_range, ari, linestyle='-', marker='o', color='b')
-    axs[1, 0].set_title('ARI Score Copared to the Eigen Dimension')
+    axs[1, 0].set_title('ARI Score per Eigen Dimension')
     axs[1, 0].set_xlabel('Dimension')
-    axs[1, 0].set_ylabel('ARI Score')
+    axs[1, 0].set_ylabel('ARI')
 
     axs[1, 1].plot(v_range, ami, linestyle='-', marker='o', color='b')
-    axs[1, 1].set_title('AMI Score Copared to the Eigen Dimension')
+    axs[1, 1].set_title('AMI Score per Eigen Dimension')
     axs[1, 1].set_xlabel('Dimension')
-    axs[1, 1].set_ylabel('AMI Score')
+    axs[1, 1].set_ylabel('AMI')
 
 
