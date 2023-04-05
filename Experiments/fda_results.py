@@ -50,28 +50,28 @@ def plot_percentage_variation_ami_ari(variance_explained, ari, ami, v_range, sim
         elif simulation_labels[i] == 2:
             axs[0, 0].plot(data[i], linestyle='--', color='g')
         elif simulation_labels[i] == 3:
-            axs[0, 0].plot(data[i], linestyle='--', color='m')
+            axs[0, 0].plot(data[i], linestyle='--', color='c')
         elif simulation_labels[i] == 4:
             axs[0, 0].plot(data[i], linestyle='--', color='y')
         elif simulation_labels[i] == 5:
             axs[0, 0].plot(data[i], linestyle='--', color='k')
         else:
-            axs[0, 0].plot(data[i], linestyle='--', color='c')
-    # axs[0, 0].set_title('Simulated data')
+            axs[0, 0].plot(data[i], linestyle='--', color='m')
+    axs[0, 0].set_title('Simulated data')
     axs[0, 0].set_xlabel('Time')
     axs[0, 0].set_ylabel('Y')
     axs[0, 1].plot(v_range, np.cumsum(variance_explained)*100, linestyle='-', marker='o', color='k')
-    # axs[0, 1].set_title('Total Variation % '+'Explained per Eigen Dimension')
+    axs[0, 1].set_title('Total Variation % '+'Explained per Eigen Dimension')
     axs[0, 1].set_xlabel('Dimension')
     axs[0, 1].set_ylabel('Variance Explained')
     
     axs[1, 0].plot(v_range, ari, linestyle='-', marker='o', color='k')
-    # axs[1, 0].set_title('ARI Score per Eigen Dimension')
+    axs[1, 0].set_title('ARI Score per Eigen Dimension')
     axs[1, 0].set_xlabel('Dimension')
     axs[1, 0].set_ylabel('ARI')
 
     axs[1, 1].plot(v_range, ami, linestyle='-', marker='o', color='k')
-    # axs[1, 1].set_title('AMI Score per Eigen Dimension')
+    axs[1, 1].set_title('AMI Score per Eigen Dimension')
     axs[1, 1].set_xlabel('Dimension')
     axs[1, 1].set_ylabel('AMI')
 
